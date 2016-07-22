@@ -6,7 +6,7 @@
       :operation="ope" :index="$index"
       @on-key-enter="onItemKeyEnter" @on-key-delete="onItemKeyDelete"
       @on-key-up="onItemKeyUp" @on-key-down="onItemKeyDown"
-      @on-focus="onItemFocus" @on-blur="onItemBlur">
+      @on-focus="onItemFocus">
     </operation-list-item>
   </div>
 </template>
@@ -119,12 +119,6 @@
 
       onItemFocus (item) {
         this.selectionIndex = item.index
-      },
-
-      onItemBlur (item, e) {
-        // if (item.operation.source === '' && item.index !== this.operations.length - 1) {
-        //   this.operations.$remove(item.operation)
-        // }
       }
     }
   }
