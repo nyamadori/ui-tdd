@@ -6,9 +6,9 @@
       placeholder="New operation"
       v-model="operation.source"
       v-el:operation-input
-      @keyup.enter="onKeyEnter" @keyup.8="onKeyDelete"
+      @keyup.enter="onKeyEnter" @keydown.8="onKeyDelete"
       @keydown.up.prevent="onKeyUp" @keydown.down.prevent="onKeyDown"
-      @focus="onFocus" @blur="onBlur"></input>
+      @focus="onFocus"></input>
   </div>
 </template>
 
@@ -38,10 +38,6 @@
 
       onFocus (e) {
         this.$dispatch('on-focus', this, e)
-      },
-
-      onBlur (e) {
-        this.$dispatch('on-blur', this, e)
       },
 
       focus () {
